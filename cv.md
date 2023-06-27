@@ -36,10 +36,11 @@ function countdownTimer() {
 ```
 ***
 ### Experience
-
+* **Django Web Application** (Python, Django, MySQL, HTML, CSS, JavaScript)
+    + [Click][tag3]
 ***
 ### Education
-Belarusian State University of Informatics and Radioelectronics | Artificial Intelligence (2020-2024)
+**Belarusian State University of Informatics and Radioelectronics** | Artificial Intelligence (2020-2024)
 ***
 ### Languages
 * **Belarusian** - Native
@@ -48,3 +49,4 @@ Belarusian State University of Informatics and Radioelectronics | Artificial Int
 
 [tag1]: https://github.com/MariaS111
 [tag2]: https://www.linkedin.com/in/maria-sviridova-006bba234
+[tag3]: https://github.com/MariaS111/PsyWay
