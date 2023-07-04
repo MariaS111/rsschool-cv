@@ -1,0 +1,27 @@
+$primary-color: white;
+// $another-color: rgb(227, 198, 102);
+$another-color: #f1c153;
+$primary-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-col{
+    @include flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin a-style{
+    color: $primary-color; 
+    font-family: $primary-font;
+}
+
+@mixin line{
+    content: "";
+    position: absolute;
+    height: 0.15rem; 
+    background-color: $another-color; 
+}
