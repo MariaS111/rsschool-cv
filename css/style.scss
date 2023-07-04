@@ -1,0 +1,228 @@
+@import 'utils';
+
+body{
+background-color: black;
+color: $primary-color;
+font-family: 'Times New Roman', Times, serif;
+font-size: 20px;
+}
+
+.header{
+    @include flex;
+    justify-content: flex-end;
+    column-gap: 3rem;
+    height: 5rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+
+    a{
+        @include a-style;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+    a:hover{
+        color: $another-color;
+        text-decoration: underline;
+        text-decoration-color: $another-color;
+    }
+}
+
+.image{
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    }
+
+.square {
+    width: 21rem;
+    height: 20rem; 
+    background-color: $another-color;
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    z-index: -5;
+    }
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to right, rgba(255, 255, 255, 0) 80%, black),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to left, rgba(255, 255, 255, 0) 80%, black);
+    z-index: 1;
+    }
+
+img{
+    display: block;
+    width: 23rem;
+    height: 22rem; 
+    animation: fade-in 2s ease-in-out;
+}
+
+.image-style{
+    position: relative;
+}
+
+
+.preview{
+    @include flex;
+    justify-content: center;
+    column-gap: 12rem;
+    padding-top: 6rem;
+   
+}
+
+.base-info{
+    @include flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    
+    p{
+        font-size: 1.3rem;
+    }
+
+    h1{
+      font-size: 3rem;
+  
+    } 
+    
+    h2{
+        font-size: 2.5rem;
+        color: $another-color;    
+        padding-top: 0;
+        padding-bottom: 1rem;
+    }
+}
+
+main{
+    @include flex-col;   
+    h2{
+        color: $another-color;
+        padding-top: 4rem;
+    }
+        
+}
+
+p{
+    font-size: 1.5rem;
+    // font-family:$primary-font;
+}
+
+.button{
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    background: linear-gradient(to right, #e1a326, $another-color);
+    color: $primary-color;
+    text-decoration: none;
+    border-radius: 2rem;
+}
+
+.button:hover {
+    background: linear-gradient(to right,#d48a1a, #dea146);
+  }
+
+#about{
+    p {
+        position: relative;
+    }
+      
+    p::before {
+        @include line;
+        left: -2rem;
+        top: 50%;
+        width: 1.5rem;
+    }
+
+}
+
+.circle {
+    position: relative;
+    background-color: black;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 0.5rem solid rgb(58, 57, 57);
+    // border-image: linear-gradient(rgb(13, 13, 13) 60%, #d12f2f 40%) 20;
+  }
+
+#skills{
+
+}
+
+#education{
+    @include flex;
+    column-gap: 10rem;
+
+    h3{
+        position: relative;
+    }
+
+    h3::before {
+        content: "";
+        position: absolute;
+        left: -1.5rem;
+        top:  0.5rem;
+        display: inline-block;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: $another-color;
+    }
+}
+
+#languages{
+    @include flex;
+    column-gap: 10rem;
+
+    .lang{
+      @include flex-col;
+      position: relative;
+    }
+
+    .line{
+        @include line;
+        width: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 50%;
+    }
+}
+
+footer{
+    @include flex-col;
+
+    a{
+       @include a-style;
+       font-size: 1.2rem;
+       font-weight: bold;
+    }
+
+    a:hover{
+        color: $another-color;
+    }
+
+    img{
+        width: 6rem;
+        height: 4rem;
+    }
+}
+
+#contacts{
+    @include flex;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 0.5rem;
+    column-gap: 8rem;
+
+    .rs-school{
+        
+    }
+}
+
