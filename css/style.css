@@ -17,7 +17,6 @@ body {
 }
 .header a {
   color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.2rem;
   text-decoration: none;
 }
@@ -81,7 +80,7 @@ img {
   row-gap: 1rem;
 }
 .base-info p {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 .base-info h1 {
   font-size: 3rem;
@@ -144,6 +143,19 @@ p {
   border: 0.5rem solid rgb(58, 57, 57);
 }
 
+#experience {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 7rem;
+       column-gap: 7rem;
+  margin-top: 3rem;
+}
+#experience img {
+  width: 40rem;
+  height: 22rem;
+  opacity: 0.6;
+}
+
 #education {
   display: flex;
   align-items: center;
@@ -197,7 +209,6 @@ footer {
 }
 footer a {
   color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 1.2rem;
   font-weight: bold;
 }

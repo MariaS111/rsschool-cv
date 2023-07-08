@@ -16,7 +16,7 @@ font-size: 20px;
     padding-bottom: 2rem;
 
     a{
-        @include a-style;
+        color: $primary-color; 
         font-size: 1.2rem;
         text-decoration: none;
     }
@@ -84,7 +84,7 @@ img{
     row-gap: 1rem;
     
     p{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     h1{
@@ -156,6 +156,19 @@ p{
 
 }
 
+#experience{
+    @include flex;
+    column-gap: 7rem;
+    margin-top: 3rem;
+
+
+    img{
+        width: 40rem;
+        height: 22rem; 
+        opacity: 0.6;
+    }
+}
+
 #education{
     @include flex;
     column-gap: 10rem;
@@ -199,7 +212,7 @@ footer{
     @include flex-col;
 
     a{
-       @include a-style;
+       color: $primary-color; 
        font-size: 1.2rem;
        font-weight: bold;
     }
