@@ -35,14 +35,28 @@ font-size: 20px;
     }
 
 .square {
-    width: 21rem;
+    width: 22rem;
     height: 20rem; 
     background-color: $another-color;
     position: absolute;
-    top: -2rem;
-    left: -2rem;
+    top: -2.5rem;
+    left: -2.5rem;
     z-index: -5;
     }
+
+.square::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to left, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to right, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black);
+    z-index: 1;
+    }    
 
 .image::before {
     content: "";
@@ -101,7 +115,8 @@ img{
 }
 
 main{
-    @include flex-col;   
+    @include flex-col; 
+
     h2{
         color: $another-color;
         padding-top: 4rem;
@@ -111,7 +126,6 @@ main{
 
 p{
     font-size: 1.5rem;
-    // font-family:$primary-font;
 }
 
 .button{
@@ -129,6 +143,8 @@ p{
   }
 
 #about{
+    align-items: left;
+
     p {
         position: relative;
     }
@@ -141,16 +157,6 @@ p{
     }
 
 }
-
-.circle {
-    position: relative;
-    background-color: black;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    border: 0.5rem solid rgb(58, 57, 57);
-    // border-image: linear-gradient(rgb(13, 13, 13) 60%, #d12f2f 40%) 20;
-  }
 
 #skills{
     @include flex;
@@ -202,43 +208,58 @@ p{
 
 #experience{
     @include flex;
-    flex-wrap: wrap;
     justify-content: center;
     column-gap: 7rem;
     row-gap: 5rem;
     margin-top: 3rem;
 
+    div{
+        position: relative;
+    }
+    
+    .inner-img-content{
+        @include flex-col;
+        position: absolute;
+        align-items: center;
+        width: 18rem;
+        top:40%;
+        left:27%;
+    }
+
+    h3{
+        text-align: center;
+        height: 4rem;
+    }
 
     img{
         width: 40rem;
         height: 22rem; 
-        opacity: 0.6;
+        opacity: 0.4;
         border-radius: 1rem;
     }
 
-    :first-child {
-        opacity: 0.3;
+    div:nth-child(2) img {
+        opacity: 0.2;
       }
+
 }
 
 #education{
     @include flex;
     column-gap: 10rem;
+    row-gap: 5rem;
 
-    h3{
+    div{
         position: relative;
+        @include flex-col;
     }
 
-    h3::before {
-        content: "";
-        position: absolute;
-        left: -1.5rem;
-        top:  0.5rem;
-        display: inline-block;
-        width: 0.7rem;
-        height: 0.7rem;
-        border-radius: 50%;
-        background-color: $another-color;
+    .line{
+        @include line;
+        width: 8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
     }
 }
 
@@ -285,20 +306,17 @@ footer{
     padding-top: 5rem;
     padding-bottom: 0.5rem;
     column-gap: 8rem;
-
-    .rs-school{
-        
-    }
 }
 
 
-#btnScrollToTop {
+#btnScrollTop {
     display: none;
     position: fixed;
+    font-size: 1rem;
     bottom: 2rem;
     right: 2rem;
-    width: 4rem;
-    height: 3rem;
+    width: 5rem;
+    height: 4.5rem;
     border: none;
     padding: 0;
     border-radius: 50%;

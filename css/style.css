@@ -8,6 +8,7 @@ body {
 .header {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: flex-end;
   -moz-column-gap: 3rem;
        column-gap: 3rem;
@@ -33,13 +34,24 @@ body {
 }
 
 .square {
-  width: 21rem;
+  width: 22rem;
   height: 20rem;
   background-color: #f1c153;
   position: absolute;
-  top: -2rem;
-  left: -2rem;
+  top: -2.5rem;
+  left: -2.5rem;
   z-index: -5;
+}
+
+.square::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black), linear-gradient(to left, rgba(255, 255, 255, 0) 95%, black), linear-gradient(to right, rgba(255, 255, 255, 0) 95%, black), linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black);
+  z-index: 1;
 }
 
 .image::before {
@@ -67,6 +79,7 @@ img {
 .preview {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   -moz-column-gap: 12rem;
        column-gap: 12rem;
@@ -76,6 +89,7 @@ img {
 .base-info {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   row-gap: 1rem;
 }
@@ -95,6 +109,7 @@ img {
 main {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -121,6 +136,9 @@ p {
   background: linear-gradient(to right, #d48a1a, #dea146);
 }
 
+#about {
+  align-items: left;
+}
 #about p {
   position: relative;
 }
@@ -134,18 +152,10 @@ p {
   width: 1.5rem;
 }
 
-.circle {
-  position: relative;
-  background-color: black;
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  border: 0.5rem solid rgb(58, 57, 57);
-}
-
 #skills {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   -moz-column-gap: 5rem;
        column-gap: 5rem;
   flex-wrap: wrap;
@@ -154,6 +164,7 @@ p {
 #skills .skill {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -198,46 +209,73 @@ p {
   row-gap: 5rem;
   margin-top: 3rem;
 }
+#experience div {
+  position: relative;
+}
+#experience .inner-img-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: 18rem;
+  top: 40%;
+  left: 27%;
+}
+#experience h3 {
+  text-align: center;
+  height: 4rem;
+}
 #experience img {
   width: 40rem;
   height: 22rem;
-  opacity: 0.6;
+  opacity: 0.4;
   border-radius: 1rem;
 }
-#experience :first-child {
-  opacity: 0.3;
+#experience div:nth-child(2) img {
+  opacity: 0.2;
 }
 
 #education {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   -moz-column-gap: 10rem;
        column-gap: 10rem;
+  row-gap: 5rem;
 }
-#education h3 {
+#education div {
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
-#education h3::before {
+#education .line {
   content: "";
   position: absolute;
-  left: -1.5rem;
-  top: 0.5rem;
-  display: inline-block;
-  width: 0.7rem;
-  height: 0.7rem;
-  border-radius: 50%;
+  height: 0.15rem;
   background-color: #f1c153;
+  width: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
 }
 
 #languages {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   -moz-column-gap: 10rem;
        column-gap: 10rem;
 }
 #languages .lang {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -256,6 +294,7 @@ p {
 footer {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
 }
@@ -275,19 +314,22 @@ footer img {
 #contacts {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   padding-top: 5rem;
   padding-bottom: 0.5rem;
   -moz-column-gap: 8rem;
        column-gap: 8rem;
 }
-#btnScrollToTop {
+
+#btnScrollTop {
   display: none;
   position: fixed;
+  font-size: 1rem;
   bottom: 2rem;
   right: 2rem;
-  width: 4rem;
-  height: 3rem;
+  width: 5rem;
+  height: 4.5rem;
   border: none;
   padding: 0;
   border-radius: 50%;

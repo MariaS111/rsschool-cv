@@ -2,16 +2,16 @@ window.onscroll = function() {
     scrollFunction();
   };
   
-  function scrollFunction() {
-    var btnScrollToTop = document.getElementById("btnScrollToTop");
-    if (document.documentElement.scrollTop > 300 || document.body.scrollTop > 300) {
-      btnScrollToTop.style.display = "block";
-    } else {
-      btnScrollToTop.style.display = "none";
-    }
+function scrollFunction() {
+  var btnScrollTop = document.getElementById("btnScrollTop");
+  if (document.documentElement.scrollTop > 500 || document.body.scrollTop > 500) {
+    btnScrollTop.style.display = "block";
+  } else {
+    btnScrollTop.style.display = "none";
   }
-  
-  function scrollToTop() {
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
-  }
+}
+
+function scrollToTop() {
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
