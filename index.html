@@ -7,14 +7,16 @@
 </head>
 <body>
 <header>
-    <nav class="header">
-        <a href="#about">About myself</a>
-        <a href="#skills">Skills</a>
-        <a href="#code-example">Code example</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#languages">Languages</a>
-        <a href="#contacts">Contacts</a>
+    <nav>
+        <ul>
+            <li><a href="#about">About myself</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#code-example">Code example</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+        </ul>
     </nav>
 </header>
 <main>
@@ -35,7 +37,7 @@
         </div>
     </div>
     <h2>&lt;About Myself&gt;</h2>
-    <section id="about">
+    <section id="about">  
         <div class="line"></div>
         <p>I'm a third-year student at BSUIR specializing in artificial intelligence.</p>
         <div class="line"></div>
@@ -47,38 +49,40 @@
     </section>
     <h2>&lt;Skills&gt;</h2>
     <section id="skills">
-        <div class="skill">
-            <h4>Python</h4>
-            <div class="percent" style="--p:70;">70%</div>
-        </div>
-        <div class="skill">
-            <h4>Django</h4>
-            <div class="percent" style="--p:60;">60%</div>
-        </div>
-        <div class="skill">
-            <h4>SQL</h4>
-            <div class="percent" style="--p:50;">50%</div>
-        </div>
-        <div class="skill">
-            <h4>Javascript</h4>
-            <div class="percent" style="--p:20;">20%</div>   
-        </div>
-        <div class="skill">
-            <h4>Git/Github</h4>
-            <div class="percent" style="--p:50;">50%</div>   
-        </div>
-        <div class="skill">
-            <h4>HTML</h4>
-            <div class="percent" style="--p:40;">40%</div>   
-        </div>
-        <div class="skill">
-            <h4>CSS</h4>
-            <div class="percent" style="--p:40;">40%</div>   
-        </div>
-        <div class="skill">
-            <h4>Figma</h4>
-            <div class="percent" style="--p:30;">30%</div>   
-        </div>
+        <ul>
+            <li class="skill">
+                <h4>Python</h4>
+                <div class="percent" style="--p:70;">70%</div>
+            </li>
+            <li class="skill">
+                <h4>Django</h4>
+                <div class="percent" style="--p:60;">60%</div>
+            </li>
+            <li class="skill">
+                <h4>SQL</h4>
+                <div class="percent" style="--p:50;">50%</div>
+            </li>
+            <li class="skill">
+                <h4>Javascript</h4>
+                <div class="percent" style="--p:20;">20%</div>   
+            </li>
+            <li class="skill">
+                <h4>Git/Github</h4>
+                <div class="percent" style="--p:50;">50%</div>   
+            </li>
+            <li class="skill">
+                <h4>HTML</h4>
+                <div class="percent" style="--p:40;">40%</div>   
+            </li>
+            <li class="skill">
+                <h4>CSS</h4>
+                <div class="percent" style="--p:40;">40%</div>   
+            </li>
+            <li class="skill">
+                <h4>Figma</h4>
+                <div class="percent" style="--p:30;">30%</div>   
+            </li>
+        </ul>
     </section>
     <h2>&lt;Code example&gt;</h2>
     <section id="code-example">
@@ -87,17 +91,17 @@
                 function countdownTimer() {
                     const diff = deadline - new Date();
             
-                    if (diff <= 0) {
+                    if (diff &lt;= 0) {
                         clearInterval(timerId);
                     }
                     const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
                     const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
                     const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
                     const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
-                    $days.textContent = days < 10 ? '0' + days : days;
-                    $hours.textContent = hours < 10 ? '0' + hours : hours;
-                    $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
-                    $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+                    $days.textContent = days &lt; 10 ? '0' + days : days;
+                    $hours.textContent = hours &lt; 10 ? '0' + hours : hours;
+                    $minutes.textContent = minutes &lt; 10 ? '0' + minutes : minutes;
+                    $seconds.textContent = seconds &lt; 10 ? '0' + seconds : seconds;
                 }
             </code>
           </pre>
@@ -157,11 +161,11 @@
 </main>
 <button class="button" id="btnScrollTop" onclick="scrollToTop()">Return to top</button>
 <footer>
-    <div id="contacts">
-        <a href="https://www.linkedin.com/in/maria-sviridova-006bba234">LinkedIn</a>
-        <a href="https://github.com/MariaS111">GitHub</a>
-        <a class="rs-school" href="https://rs.school/js/"><img src="image/rs_school.png" alt="rs-school"></a>
-    </div>
+    <ul id="contacts">
+        <li><a href="https://www.linkedin.com/in/maria-sviridova-006bba234">LinkedIn</a></li>
+        <li><a href="https://github.com/MariaS111">GitHub</a></li>
+        <li><a class="rs-school" href="https://rs.school/js/"><img src="image/rs_school.png" alt="rs-school"></a></li>
+    </ul>
     <p>&copy;2023 by Maria Sviridova</p>
 </footer>
 <script src="script.js"></script>

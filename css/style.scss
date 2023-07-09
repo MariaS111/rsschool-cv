@@ -1,38 +1,44 @@
 @import 'utils';
 
-body{
+body {
 background-color: black;
 color: $primary-color;
 font-family: 'Times New Roman', Times, serif;
 font-size: 20px;
 }
 
-.header{
+ul {
+    list-style-type: none;
+}  
+
+nav {
+    ul {
     @include flex;
     justify-content: flex-end;
     column-gap: 3rem;
     height: 5rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
+    }
 
-    a{
+    a {
         color: $primary-color; 
         font-size: 1.2rem;
         text-decoration: none;
     }
 
-    a:hover{
+    a:hover {
         color: $another-color;
         text-decoration: underline;
         text-decoration-color: $another-color;
     }
 }
 
-.image{
+.image {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    }
+}
 
 .square {
     width: 22rem;
@@ -42,7 +48,7 @@ font-size: 20px;
     top: -2.5rem;
     left: -2.5rem;
     z-index: -5;
-    }
+}
 
 .square::before {
     content: "";
@@ -56,7 +62,7 @@ font-size: 20px;
                 linear-gradient(to right, rgba(255, 255, 255, 0) 95%, black),
                 linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black);
     z-index: 1;
-    }    
+}    
 
 .image::before {
     content: "";
@@ -70,29 +76,27 @@ font-size: 20px;
                 linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black),
                 linear-gradient(to left, rgba(255, 255, 255, 0) 80%, black);
     z-index: 1;
-    }
+}
 
-img{
+img {
     display: block;
     width: 23rem;
     height: 22rem; 
     animation: fade-in 2s ease-in-out;
 }
 
-.image-style{
+.image-style {
     position: relative;
 }
 
-
-.preview{
+.preview {
     @include flex;
     justify-content: center;
     column-gap: 12rem;
     padding-top: 6rem;
-   
 }
 
-.base-info{
+.base-info {
     @include flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -114,7 +118,7 @@ img{
     }
 }
 
-main{
+main {
     @include flex-col; 
 
     h2{
@@ -124,11 +128,11 @@ main{
         
 }
 
-p{
+p {
     font-size: 1.5rem;
 }
 
-.button{
+.button {
     display: inline-block;
     padding: 1rem 2rem;
     font-size: 1.3rem;
@@ -140,9 +144,9 @@ p{
 
 .button:hover {
     background: linear-gradient(to right,#d48a1a, #dea146);
-  }
+}
 
-#about{
+#about {
     align-items: left;
 
     p {
@@ -158,13 +162,16 @@ p{
 
 }
 
-#skills{
-    @include flex;
-    column-gap: 5rem;
-    flex-wrap: wrap;
-    justify-content: center;
+#skills {
 
-    .skill{
+    ul {
+        @include flex;
+        column-gap: 5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .skill {
         @include flex-col;
     }
 
@@ -178,9 +185,9 @@ p{
         font-size: 25px;
         font-weight: bold;
         font-family: sans-serif;
-      }
+    }
 
-      .percent:before {
+    .percent:before {
         content: "";
         position: absolute;
         border-radius: 50%;
@@ -188,7 +195,7 @@ p{
         background: conic-gradient($another-color calc(var(--p)*1%),#0000 0);
         -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
                 mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
-      }
+    }
 }
 
 .dark-theme {
@@ -200,24 +207,23 @@ p{
     padding-right: 6rem;
     border-radius: 2rem;
     
-    code 
-    {
+    code {
         font-size: 1rem;    
     }
-  }
+}
 
-#experience{
+#experience {
     @include flex;
     justify-content: center;
     column-gap: 7rem;
     row-gap: 5rem;
     margin-top: 3rem;
 
-    div{
+    div {
         position: relative;
     }
     
-    .inner-img-content{
+    .inner-img-content {
         @include flex-col;
         position: absolute;
         align-items: center;
@@ -226,12 +232,12 @@ p{
         left:27%;
     }
 
-    h3{
+    h3 {
         text-align: center;
         height: 4rem;
     }
 
-    img{
+    img {
         width: 40rem;
         height: 22rem; 
         opacity: 0.4;
@@ -244,17 +250,18 @@ p{
 
 }
 
-#education{
+#education {
     @include flex;
+    justify-content: center;
     column-gap: 10rem;
     row-gap: 5rem;
 
-    div{
+    div {
         position: relative;
         @include flex-col;
     }
 
-    .line{
+    .line {
         @include line;
         width: 8rem;
         left: 50%;
@@ -263,16 +270,16 @@ p{
     }
 }
 
-#languages{
+#languages {
     @include flex;
     column-gap: 10rem;
 
-    .lang{
+    .lang {
       @include flex-col;
       position: relative;
     }
 
-    .line{
+    .line {
         @include line;
         width: 3rem;
         left: 50%;
@@ -281,26 +288,26 @@ p{
     }
 }
 
-footer{
+footer {
     @include flex-col;
 
-    a{
+    a {
        color: $primary-color; 
        font-size: 1.2rem;
        font-weight: bold;
     }
 
-    a:hover{
+    a:hover {
         color: $another-color;
     }
 
-    img{
+    img {
         width: 6rem;
         height: 4rem;
     }
 }
 
-#contacts{
+#contacts {
     @include flex;
     justify-content: center;
     padding-top: 5rem;
