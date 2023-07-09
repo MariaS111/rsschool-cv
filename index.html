@@ -10,6 +10,7 @@
     <nav class="header">
         <a href="#about">About myself</a>
         <a href="#skills">Skills</a>
+        <a href="#code-example">Code example</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
         <a href="#languages">Languages</a>
@@ -43,8 +44,64 @@
     </section>
     <h2>&lt;Skills&gt;</h2>
     <section id="skills">
-        <!-- <div class="circle"></div> -->
+        <div class="skill">
+            <h4>Python</h4>
+            <div class="percent" style="--p:70;">70%</div>
+        </div>
+        <div class="skill">
+            <h4>Django</h4>
+            <div class="percent" style="--p:60;">60%</div>
+        </div>
+        <div class="skill">
+            <h4>SQL</h4>
+            <div class="percent" style="--p:50;">50%</div>
+        </div>
+        <div class="skill">
+            <h4>Javascript</h4>
+            <div class="percent" style="--p:20;">20%</div>   
+        </div>
+        <div class="skill">
+            <h4>Git/Github</h4>
+            <div class="percent" style="--p:50;">50%</div>   
+        </div>
+        
+        <div class="skill">
+            <h4>HTML</h4>
+            <div class="percent" style="--p:40;">40%</div>   
+        </div>
+        <div class="skill">
+            <h4>CSS</h4>
+            <div class="percent" style="--p:40;">40%</div>   
+        </div>
+        <div class="skill">
+            <h4>Figma</h4>
+            <div class="percent" style="--p:30;">30%</div>   
+        </div>
     </section>
+
+    <h2>&lt;Code example&gt;</h2>
+    <section id="code-example">
+        <pre class="dark-theme">
+            <code>
+                function countdownTimer() {
+                    const diff = deadline - new Date();
+            
+                    if (diff <= 0) {
+                        clearInterval(timerId);
+                    }
+                    const days = diff > 0 ? Math.floor(diff / 1000 / 60 / 60 / 24) : 0;
+                    const hours = diff > 0 ? Math.floor(diff / 1000 / 60 / 60) % 24 : 0;
+                    const minutes = diff > 0 ? Math.floor(diff / 1000 / 60) % 60 : 0;
+                    const seconds = diff > 0 ? Math.floor(diff / 1000) % 60 : 0;
+                    $days.textContent = days < 10 ? '0' + days : days;
+                    $hours.textContent = hours < 10 ? '0' + hours : hours;
+                    $minutes.textContent = minutes < 10 ? '0' + minutes : minutes;
+                    $seconds.textContent = seconds < 10 ? '0' + seconds : seconds;
+                }
+            </code>
+          </pre>
+    </section>
+
     <h2>&lt;Experience&gt;</h2>
     <section id="experience">
         <img src="image/exp1.png" alt="first project">
@@ -84,6 +141,7 @@
         </div>
     </section>
 </main>
+<button class="button" id="btnScrollToTop" onclick="scrollToTop()">Top</button>
 <footer>
     <div id="contacts">
         <a href="#">LinkedIn</a>
@@ -92,5 +150,6 @@
     </div>
     <p>&copy;2023 by Maria Sviridova</p>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>

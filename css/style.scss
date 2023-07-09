@@ -153,12 +153,59 @@ p{
   }
 
 #skills{
+    @include flex;
+    column-gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    .skill{
+        @include flex-col;
+    }
+
+    .percent {
+        width: 6rem;
+        aspect-ratio: 1;
+        position: relative;
+        display: inline-grid;
+        place-content: center;
+        margin: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+      }
+
+      .percent:before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        inset: 0;
+        background: conic-gradient($another-color calc(var(--p)*1%),#0000 0);
+        -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
+                mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
+      }
 }
+
+.dark-theme {
+    background-color: #1b1c1c;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to right, rgba(255, 255, 255, 0) 90%, black),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to left, rgba(255, 255, 255, 0) 85%, black);
+    padding-right: 6rem;
+    border-radius: 2rem;
+    
+    code 
+    {
+        font-size: 1rem;    
+    }
+  }
 
 #experience{
     @include flex;
+    flex-wrap: wrap;
+    justify-content: center;
     column-gap: 7rem;
+    row-gap: 5rem;
     margin-top: 3rem;
 
 
@@ -166,7 +213,12 @@ p{
         width: 40rem;
         height: 22rem; 
         opacity: 0.6;
+        border-radius: 1rem;
     }
+
+    :first-child {
+        opacity: 0.3;
+      }
 }
 
 #education{
@@ -238,4 +290,18 @@ footer{
         
     }
 }
+
+
+#btnScrollToTop {
+    display: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 3rem;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
