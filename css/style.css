@@ -118,18 +118,15 @@ main {
   justify-content: center;
 }
 main h2 {
+  padding: 0;
   color: #f1c153;
   padding-top: 4rem;
 }
 
-p {
-  font-size: 1.5rem;
-}
-
 .button {
   display: inline-block;
-  padding: 1rem 2rem;
-  font-size: 1.3rem;
+  padding: 1rem 1rem;
+  font-size: 1.2rem;
   background: linear-gradient(to right, #e1a326, #f1c153);
   color: white;
   text-decoration: none;
@@ -140,11 +137,12 @@ p {
   background: linear-gradient(to right, #d48a1a, #dea146);
 }
 
-#about {
-  align-items: left;
+#about div {
+  text-align: left;
 }
 #about p {
   position: relative;
+  font-size: 1.4rem;
 }
 #about p::before {
   content: "";

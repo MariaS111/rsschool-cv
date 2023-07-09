@@ -121,21 +121,18 @@ img {
 main {
     @include flex-col; 
 
-    h2{
+    h2 {
+        padding: 0;
         color: $another-color;
         padding-top: 4rem;
     }
         
 }
 
-p {
-    font-size: 1.5rem;
-}
-
 .button {
     display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     background: linear-gradient(to right, #e1a326, $another-color);
     color: $primary-color;
     text-decoration: none;
@@ -147,10 +144,14 @@ p {
 }
 
 #about {
-    align-items: left;
+
+    div {
+    text-align: left;
+    }
 
     p {
         position: relative;
+        font-size: 1.4rem;
     }
       
     p::before {
