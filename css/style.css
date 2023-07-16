@@ -1,3 +1,19 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scale {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 1.1;
+  }
+}
 body {
   background-color: black;
   color: white;
@@ -24,11 +40,28 @@ nav a {
   color: white;
   font-size: 1.2rem;
   text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 0.1rem;
+  transition: background-size 1s;
 }
 nav a:hover {
   color: #f1c153;
-  text-decoration: underline;
-  text-decoration-color: #f1c153;
+  background-size: 100% 0.1rem;
+}
+nav .nav-button {
+  display: none;
+}
+nav .nav-button img {
+  width: 3rem;
+  height: 3rem;
+}
+
+main,
+header,
+footer {
+  animation: fadeIn 1s ease-in-out;
 }
 
 .image {
@@ -73,7 +106,6 @@ img {
   display: block;
   width: 23rem;
   height: 22rem;
-  animation: fade-in 2s ease-in-out;
 }
 
 .image-style {
@@ -131,10 +163,14 @@ main h2 {
   color: white;
   text-decoration: none;
   border-radius: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem #f1c153;
+  transition: 1s;
 }
 
 .button:hover {
-  background: linear-gradient(to right, #d48a1a, #dea146);
+  background: linear-gradient(to right, #ea7430, #dea146);
+  box-shadow: 0.2rem 0.2rem 0.5rem #ea7430;
+  animation: scale 0.5s ease-in-out forwards;
 }
 
 #about div {

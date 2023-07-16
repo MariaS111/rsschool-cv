@@ -1,21 +1,43 @@
 $primary-color: white;
 $another-color: #f1c153;
 
-@mixin flex{
+@mixin flex {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-@mixin flex-col{
+@mixin flex-col  {
     @include flex;
     flex-direction: column;
     justify-content: center;
 }
 
-@mixin line{
+@mixin line {
     content: "";
     position: absolute;
     height: 0.15rem; 
     background-color: $another-color; 
 }
+
+
+@keyframes fadeIn {
+    from {
+         opacity: 0; 
+    }
+
+    to {
+         opacity: 1; 
+    }
+}
+
+@keyframes scale {
+    from {
+         scale: 1; 
+    }
+
+    to {
+        scale: 1.1; 
+    }
+}
+  
