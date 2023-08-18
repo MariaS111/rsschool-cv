@@ -1,11 +1,18 @@
 @media (max-width: 992px) {
-    .menu{
+    .nav{
         display: none;
     }
 
-    .nav-button{
+    .burger{
         display: flex; 
-        justify-content: flex-end;
     }
+
+    header {
+        display: flex;
+        padding-right: 15px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
 
 }

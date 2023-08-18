@@ -11,7 +11,7 @@ ul {
     list-style-type: none;
 }  
 
-nav {
+.nav {
 
     ul {
     @include flex;
@@ -22,7 +22,10 @@ nav {
     padding-bottom: 2rem;
     }
 
-    a {
+    
+}
+
+a {
         color: $primary-color; 
         font-size: 1.2rem;
         text-decoration: none;
@@ -38,16 +41,73 @@ nav {
         background-size: 100% 0.1rem;
     }
 
-    .nav-button {
-        display: none; 
-        
-        img {
-        width: 3rem;
-        height: 3rem;
-        }
+.burger {
+    display: none;
+    position: relative;
+    width: 50px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: transparent;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.burger-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 35%;
+	height: 60%;
+	padding: 15px;
+    background: black;
+    z-index: 3;
+	transform: translateX(100%);
+	transition: transform 0.5s; 
+
+    nav {
+        margin-top: 4rem;
     }
 
+    li {
+        padding-top: 25px;
+    }
 }
+
+.burger-menu.active {
+	transform: translateX(0);
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    width: 50px;
+    height: 2px;
+    background-color: $another-color;
+    transition: transform .5s;
+    will-change: transform;
+}
+
+.burger span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.burger span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+header.open .burger span:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+header.open .burger span:nth-child(2) {
+    opacity: 0;
+}
+
+header.open .burger span:nth-child(3) {
+    transform: rotate(45deg);
+}
+
 
 main,
 header,
@@ -116,6 +176,10 @@ img {
     justify-content: center;
     column-gap: 12rem;
     padding-top: 6rem;
+
+    a {
+        color: $primary-color;
+    }
 }
 
 .base-info {
@@ -245,6 +309,10 @@ main {
     column-gap: 7rem;
     row-gap: 5rem;
     margin-top: 3rem;
+
+    a {
+        color: $primary-color;
+    }
 
     div {
         position: relative;
