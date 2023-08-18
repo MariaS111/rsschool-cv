@@ -1,48 +1,150 @@
 @import 'utils';
 
-body{
+body {
 background-color: black;
 color: $primary-color;
 font-family: 'Times New Roman', Times, serif;
 font-size: 20px;
 }
 
-.header{
+ul {
+    list-style-type: none;
+}  
+
+.nav {
+
+    ul {
     @include flex;
     justify-content: flex-end;
     column-gap: 3rem;
     height: 5rem;
     padding-right: 2rem;
     padding-bottom: 2rem;
-
-    a{
-        @include a-style;
-        font-size: 1.2rem;
-        text-decoration: none;
     }
 
-    a:hover{
+    
+}
+
+a {
+        color: $primary-color; 
+        font-size: 1.2rem;
+        text-decoration: none;
+        background-image: linear-gradient(currentColor, currentColor);
+        background-position: 50% 100%;
+        background-repeat: no-repeat;
+        background-size: 0% 0.1rem;
+        transition: background-size 1s;
+    }
+
+    a:hover {
         color: $another-color;
-        text-decoration: underline;
-        text-decoration-color: $another-color;
+        background-size: 100% 0.1rem;
+    }
+
+.burger {
+    display: none;
+    position: relative;
+    width: 50px;
+    height: 40px;
+    margin-top: 30px;
+    background-color: transparent;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.burger-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 35%;
+	height: 60%;
+	padding: 15px;
+    background: black;
+    z-index: 3;
+	transform: translateX(100%);
+	transition: transform 0.5s; 
+
+    nav {
+        margin-top: 4rem;
+    }
+
+    li {
+        padding-top: 25px;
     }
 }
 
-.image{
+.burger-menu.active {
+	transform: translateX(0);
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    width: 50px;
+    height: 2px;
+    background-color: $another-color;
+    transition: transform .5s;
+    will-change: transform;
+}
+
+.burger span:nth-child(1) {
+    transform: translateY(-10px);
+}
+
+.burger span:nth-child(3) {
+    transform: translateY(10px);
+}
+
+header.open .burger span:nth-child(1) {
+    transform: rotate(-45deg);
+}
+
+header.open .burger span:nth-child(2) {
+    opacity: 0;
+}
+
+header.open .burger span:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+
+main,
+header,
+footer{
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.image {
     position: relative;
     display: inline-block;
     overflow: hidden;
-    }
+}
 
 .square {
-    width: 21rem;
+    width: 22rem;
     height: 20rem; 
     background-color: $another-color;
     position: absolute;
-    top: -2rem;
-    left: -2rem;
+    top: -2.5rem;
+    left: -2.5rem;
     z-index: -5;
-    }
+}
+
+.square::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to left, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to right, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black);
+    z-index: 1;
+}    
 
 .image::before {
     content: "";
@@ -56,35 +158,37 @@ font-size: 20px;
                 linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black),
                 linear-gradient(to left, rgba(255, 255, 255, 0) 80%, black);
     z-index: 1;
-    }
+}
 
-img{
+img {
     display: block;
     width: 23rem;
-    height: 22rem; 
-    animation: fade-in 2s ease-in-out;
+    height: 22rem;
 }
 
-.image-style{
+.image-style {
     position: relative;
+    
 }
 
-
-.preview{
+.preview {
     @include flex;
     justify-content: center;
     column-gap: 12rem;
     padding-top: 6rem;
-   
+
+    a {
+        color: $primary-color;
+    }
 }
 
-.base-info{
+.base-info {
     @include flex;
     flex-direction: column;
     row-gap: 1rem;
     
     p{
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     h1{
@@ -100,37 +204,44 @@ img{
     }
 }
 
-main{
-    @include flex-col;   
-    h2{
+main {
+    @include flex-col; 
+
+    h2 {
+        padding: 0;
         color: $another-color;
         padding-top: 4rem;
     }
         
 }
 
-p{
-    font-size: 1.5rem;
-    // font-family:$primary-font;
-}
-
-.button{
+.button {
     display: inline-block;
-    padding: 1rem 2rem;
-    font-size: 1.3rem;
+    padding: 1rem 1rem;
+    font-size: 1.2rem;
     background: linear-gradient(to right, #e1a326, $another-color);
     color: $primary-color;
     text-decoration: none;
     border-radius: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem $another-color;
+    transition: 1s;
 }
 
 .button:hover {
-    background: linear-gradient(to right,#d48a1a, #dea146);
-  }
+    background: linear-gradient(to right, #ea7430, #dea146);
+    box-shadow: 0.2rem 0.2rem 0.5rem #ea7430;
+    animation: scale 0.5s ease-in-out forwards;
+}
 
-#about{
+#about {
+
+    div {
+    text-align: left;
+    }
+
     p {
         position: relative;
+        font-size: 1.4rem;
     }
       
     p::before {
@@ -142,51 +253,128 @@ p{
 
 }
 
-.circle {
-    position: relative;
-    background-color: black;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    border: 0.5rem solid rgb(58, 57, 57);
-    // border-image: linear-gradient(rgb(13, 13, 13) 60%, #d12f2f 40%) 20;
-  }
+#skills {
 
-#skills{
-
-}
-
-#education{
-    @include flex;
-    column-gap: 10rem;
-
-    h3{
-        position: relative;
+    ul {
+        @include flex;
+        column-gap: 5rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    h3::before {
+    .skill {
+        @include flex-col;
+    }
+
+    .percent {
+        width: 6rem;
+        aspect-ratio: 1;
+        position: relative;
+        display: inline-grid;
+        place-content: center;
+        margin: 5px;
+        font-size: 25px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .percent:before {
         content: "";
         position: absolute;
-        left: -1.5rem;
-        top:  0.5rem;
-        display: inline-block;
-        width: 0.7rem;
-        height: 0.7rem;
         border-radius: 50%;
-        background-color: $another-color;
+        inset: 0;
+        background: conic-gradient($another-color calc(var(--p)*1%),#0000 0);
+        -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
+                mask:radial-gradient(farthest-side,#0000 calc(99% - 0.4rem),#000 calc(100% - 0.4rem));
     }
 }
 
-#languages{
+.dark-theme {
+    background-color: #1b1c1c;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to right, rgba(255, 255, 255, 0) 90%, black),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0) 95%, black),
+                linear-gradient(to left, rgba(255, 255, 255, 0) 85%, black);
+    padding-right: 6rem;
+    border-radius: 2rem;
+    
+    code {
+        font-size: 1rem;    
+    }
+}
+
+#experience {
+    @include flex;
+    justify-content: center;
+    column-gap: 7rem;
+    row-gap: 5rem;
+    margin-top: 3rem;
+
+    a {
+        color: $primary-color;
+    }
+
+    div {
+        position: relative;
+    }
+    
+    .inner-img-content {
+        @include flex-col;
+        position: absolute;
+        align-items: center;
+        width: 18rem;
+        top:40%;
+        left:27%;
+    }
+
+    h3 {
+        text-align: center;
+        height: 4rem;
+    }
+
+    img {
+        width: 40rem;
+        height: 22rem; 
+        opacity: 0.4;
+        border-radius: 1rem;
+    }
+
+    div:nth-child(2) img {
+        opacity: 0.2;
+      }
+
+}
+
+#education {
+    @include flex;
+    justify-content: center;
+    column-gap: 10rem;
+    row-gap: 5rem;
+
+    div {
+        position: relative;
+        @include flex-col;
+    }
+
+    .line {
+        @include line;
+        width: 8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 25%;
+    }
+}
+
+#languages {
     @include flex;
     column-gap: 10rem;
 
-    .lang{
+    .lang {
       @include flex-col;
       position: relative;
     }
 
-    .line{
+    .line {
         @include line;
         width: 3rem;
         left: 50%;
@@ -195,34 +383,45 @@ p{
     }
 }
 
-footer{
+footer {
     @include flex-col;
 
-    a{
-       @include a-style;
+    a {
+       color: $primary-color; 
        font-size: 1.2rem;
        font-weight: bold;
     }
 
-    a:hover{
+    a:hover {
         color: $another-color;
     }
 
-    img{
+    img {
         width: 6rem;
         height: 4rem;
     }
 }
 
-#contacts{
+#contacts {
     @include flex;
     justify-content: center;
     padding-top: 5rem;
     padding-bottom: 0.5rem;
     column-gap: 8rem;
-
-    .rs-school{
-        
-    }
 }
+
+
+#btnScrollTop {
+    display: none;
+    position: fixed;
+    font-size: 1rem;
+    bottom: 2rem;
+    right: 2rem;
+    width: 5rem;
+    height: 4.5rem;
+    border: none;
+    padding: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
